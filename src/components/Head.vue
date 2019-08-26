@@ -1,23 +1,22 @@
 <!--
  * @Description: In User Settings Edit
  * @Author: your name
- * @Date: 2019-08-26 09:56:38
- * @LastEditTime: 2019-08-26 11:00:51
+ * @Date: 2019-08-26 10:52:03
+ * @LastEditTime: 2019-08-26 11:33:14
  * @LastEditors: Please set LastEditors
  -->
 <template>
-  <div id='app'>
-    <All></All>
+  <div class="header">
+    <slot name="header"></slot>
   </div>
 </template>
 <script>
-import All from '@/views/All'
 export default {
   props:{
 
   },
   components:{
-      All
+
   },
   data(){
     return {
@@ -38,6 +37,14 @@ export default {
   }
 }
 </script>
-<style scoped lang="">
-
+<style scoped lang="scss">
+  .header,.q{
+    width: 100%;
+    height: 100px;
+    background: #0076FF 100%;
+    text-align: center;
+    line-height: 100px;
+    font-size: 28px;
+    color: #fff;
+  }
 </style>

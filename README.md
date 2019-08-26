@@ -1,5 +1,11 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-26 10:23:12
+ * @LastEditTime: 2019-08-26 10:38:00
+ * @LastEditors: Please set LastEditors
+ -->
 # student-manage
-<<<<<<< HEAD
 
 ## Project setup
 ```
@@ -28,6 +34,4 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-=======
 学生管理
->>>>>>> cc0035198dfd1f05ed1331a3e0c0ea311582fea5
