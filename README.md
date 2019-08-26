@@ -1,4 +1,5 @@
 # student-manage
+<<<<<<< HEAD
 
 ## Project setup
 ```
@@ -27,3 +28,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+学生管理
+>>>>>>> cc0035198dfd1f05ed1331a3e0c0ea311582fea5
