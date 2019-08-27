@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-27 19:04:32
+ * @LastEditTime: 2019-08-27 19:21:16
+ * @LastEditors: Please set LastEditors
+ */
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
@@ -24,6 +31,11 @@ export default new Router({
       path: '/Land',
       name: 'land',
       component: () => import('./views/Land.vue')
+    },
+    {
+      path: '/all',
+      name: 'all',
+      component: () => import('./views/All.vue')
     }
   ]
 })
