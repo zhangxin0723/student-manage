@@ -53,7 +53,6 @@ export default {
   color: #2c3e50;
 }
 #nav {
-  padding: 30px;
   a {
     color: #b1b2b4;
     padding-bottom:10px;

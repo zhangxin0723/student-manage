@@ -7,12 +7,16 @@
  */
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import Vue from 'vue'
+import Vuex from 'vuex'
+import visit from './modules/visit'
+import getters from './getters'
 Vue.use(Vuex)
-
-export default new Vuex.Store({
+const store = new Vuex.Store({
   modules: {
-    
+    visit
   },
-  // plugins: [CreateLogger()]
+  getters
 })
+
+export default store
