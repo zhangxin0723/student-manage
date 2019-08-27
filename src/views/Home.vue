@@ -14,7 +14,7 @@
      </div>
   </div>
 </template>
-<style>
+<style lang="scss">
 *{
   padding:0;
   margin:0;
@@ -69,7 +69,44 @@
     #home {
         width: 100%;
         height: 100%;
-        /* margin: 100px auto; */
+        #header{
+         width:100%;
+          height:80px;
+          color: rgb(255, 255, 255);
+          background-color: rgb(63, 81, 181);
+          font-size: 20px;
+          border-style: solid;
+          text-align: center;
+          line-height: 80px;
+        }
+        #name{
+          margin-top:80px;
+          p{
+            font-size:25px;
+          }
+          #up{
+             border-bottom:1px solid #eee;
+             padding-bottom: 10px;
+             width: 44%;
+             margin: 0 auto;
+             margin-top: 38px;
+            a{
+               padding: 10px 20px;
+            }
+            .page{
+              ul{
+                li{
+                   margin-bottom: 30px;
+                   border: 1px solid #eee;
+                   input{
+                     border:0;
+                     height:100%;
+                   }
+                }
+              }
+            }
+          }
+        }
     }
 }
 </style>

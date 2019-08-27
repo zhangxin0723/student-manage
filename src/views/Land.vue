@@ -173,6 +173,13 @@ export default {
 };
 </script>
 <style lang="scss">
+#app{
+  width:100%;
+  height:100%;
+}
+#home{
+  width:100%;
+}
 #head {
   background: #0076ff;
   width: 100%;
