@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-26 10:51:14
- * @LastEditTime: 2019-08-26 21:12:59
+ * @LastEditTime: 2019-08-27 16:46:09
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -39,22 +39,33 @@
         <ListItem />
         <ListItem />
       </div>
+      <template v-if='delFlag'>
+        <Del />
+      </template>
+      <template v-if='editFlag'>
+        <Edit />
+      </template>
   </div>
 </template>
 <script>
 import Head from '@/components/Head'
 import ListItem from '@/components/ListItem'
+import Del from '@/components/Del'
+import Edit from '@/components/Edit'
 export default {
   props:{
 
   },
   components:{
     Head,
-    ListItem
+    ListItem,
+    Del,
+    Edit
   },
   data(){
     return {
-
+      editFlag: true,
+      delFlag: false,
     }
   },
   computed:{
@@ -72,13 +83,17 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-  .All{
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 100px;
+  }
+   .All{
     width: 100%;
     height: 100%;
     overflow: hidden;
   }
   .content{
-    width: 1298px;
+    width: 82%;
     height: 100px;
     border: 1px solid #101010;
     margin:  0 auto;
@@ -118,7 +133,7 @@ export default {
     }
   }
   .list{
-    width: 1298px;
+    width: 82%;
     margin: 0 auto;
     color: rgba(16, 16, 16, 1);
     font-size: 14px;
@@ -143,4 +158,57 @@ export default {
       }
     }
   }
+}
+@media screen and (max-width: 414px) {
+  html {
+    font-size: 50px;
+  }
+  .All{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .content{
+    width: 100%;
+    height: 5rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    ul{
+      display: flex;
+      flex:1;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      li{
+        flex:1;
+        text-align: center;
+      }
+    }
+    .right{
+      width: 40%;
+    }
+  }
+  .list{
+    width: 96%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    font-family: Roboto;
+    border: 1px solid rgba(187, 187, 187, 1);
+    ul{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid rgba(187, 187, 187, 1);
+      li{
+        flex:2;
+        text-align: center;
+      }
+    }
+  }
+}
 </style>
