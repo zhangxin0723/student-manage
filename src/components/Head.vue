@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-26 10:52:03
- * @LastEditTime: 2019-08-27 16:30:10
+ * @LastEditTime: 2019-08-27 19:30:59
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -52,7 +52,7 @@ export default {
     color: #fff;
   }
 }
-@media screen and (max-width: 414px) {
+@media screen and (max-width:767px) {
   html{
     font-size: 50px;
   }
