@@ -22,17 +22,10 @@
   text-decoration: none;
   box-sizing: border-box;
 }
-html,
-body,
-#app,
-#nav {
-  width: 100%;
-  height: 100%;
-}
+
 @media screen and (min-width:640px) {
     #nav{
       width:710px;
-      height:510px;
       background: #f0f0f2;
       margin: 100px auto;
       display: flex;
@@ -41,7 +34,6 @@ body,
     }
     #home {
         width: 700px;
-        height: 500px;
         margin: 0px auto;
         background: #fff;
     }
