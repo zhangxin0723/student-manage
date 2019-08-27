@@ -23,7 +23,7 @@
   box-sizing: border-box;
 }
 
-@media screen and (min-width:640px) {
+@media screen and (min-width:740px) {
     #nav{
       width:710px;
       background: #f0f0f2;
@@ -65,12 +65,11 @@
     }
 }
 
-@media screen and (max-width:639px) {
+@media screen and (max-width:739px) {
     #home {
         width: 100%;
         height: 100%;
         /* margin: 100px auto; */
-        background: green;
     }
 }
 </style>

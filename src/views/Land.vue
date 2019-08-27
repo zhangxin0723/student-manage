@@ -26,13 +26,20 @@
          <li>添加</li>
      </ol>
      <div id="line" >
-        <div id="barGraph" style="height: 100%;">
-         </div>
-        <ul></ul>
+        <div id="barGraph" style="height: 100%;"></div>
+        <ul id="cont">
+          <li>
+              <span @click="add('add')">添加成绩+</span>
+              <span  @click="add('alysis')">添加分析和解决方案</span>
+          </li>
+          <li>查看和编辑所有的成绩</li>
+        </ul>
+       <AchiEvement/>
      </div>
   </div>
 </template>
 <script>
+import AchiEvement from '../components/AchiEvement'
 let echarts = require("echarts/lib/echarts");
 // 引入柱状图
 require("echarts/lib/chart/bar");
@@ -41,10 +48,20 @@ require("echarts/lib/chart/pie");
 require("echarts/lib/component/tooltip");
 require("echarts/lib/component/title");
 export default {
+  components: {
+    AchiEvement,
+  },
   mounted() {
     this.drawBar();
   },
   methods: {
+    data(){
+      return{
+         bool:false,
+      
+      }
+     
+    },
     drawBar() {
       // 基于dom，初始化echarts实例
       let barGraph = echarts.init(document.getElementById("barGraph"));
@@ -53,7 +70,6 @@ export default {
       barGraph.setOption({
         title: {
           color:'red',
-          
           text: "××同学的日周考成绩统计图",
           left: "left",
         
@@ -83,7 +99,7 @@ export default {
           type: "category",
           name: "x",
           splitLine: { show: false },
-          data: ["08-01", "08-02", "08-03", "08-04", "08-05", "08-06", "08-07"]
+          data: ["08-01", "08-02", "08-03", "08-04", "08-05", "08-06", "08-07"],
         },
         grid: {
           left: "1%",
@@ -101,6 +117,7 @@ export default {
           {
             name: "技能",
             type: "line",
+            color:"#c1232b",
             data: [40, 90, 87, 76, 55, 84, 97],
             markPoint: {
               data: [
@@ -115,7 +132,8 @@ export default {
           {
             name: "理论",
             type: "line",
-            data: [0,20,40,60,80,100],
+            data: [67,20,40,60,80,100,76],
+            color:"#b5c334",
             markPoint: {
               data: [{ name: "周最低", value: 100, xAxis: 1, yAxis: 20 }]
             },
@@ -145,7 +163,12 @@ export default {
           }
         ]
       });
-    }
+    },
+			add(type){
+         this.bool=!this.bool
+         console.log(type,'90')
+      }
+      
   }
 };
 </script>
@@ -263,5 +286,31 @@ export default {
   height: 400px;
   border: 1px solid #333;
   margin: 19px auto;
+  position: relative;
+  #cont{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    margin:10px 0;
+    li:first-of-type{
+       span{
+         display:inline-block;
+         padding:0 10px;
+         height:20px;
+         text-align:center;
+         line-height:20px;
+         border:1px solid #BBBBBB;
+         font-size:11px;
+         color:#101010;
+       }
+       span:last-of-type{
+         margin-left:10px;
+       }
+    } 
+    li:last-of-type{
+      font-size:11px;
+    }
+  }
+ 
 }
 </style>
