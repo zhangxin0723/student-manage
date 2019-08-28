@@ -5,7 +5,8 @@
         <li><input text="password"  placeholder="输入密码" v-model="this.password"/></li>
      </ul>
      <span><input type="checkbox"/>两周内自动登陆</span>
-     <button><router-link to="/land" id="den" @click="">登陆</router-link></button>
+     <button @click="land()">登陆</button>
+     <!-- <button><router-link to="/land" id="den" @click="land(this.username,this.password)">登陆</router-link></button> -->
   </div>
 </template>
 <style lang="scss">
@@ -57,6 +58,7 @@
        height: 35px;
        border:0;
        background: 0;
+       color:#fff;
        #den{
          color:#fff;
        }
@@ -66,15 +68,26 @@
    }
 </style>
 <script>
-
+import { mapState, mapMutations,mapActions} from 'vuex'
  export default{
    data(){
      return{
         username:this.$route.query.username,
         password:this.$route.query.password
      }
+   },
+   methods:{
+      ...mapActions({
+          login: 'visit/loginArticle'
+        }),
+     async land(){
+        await this.login({username:this.username,password:this.password})
+        console.log(this.$store.state.visit.loginList.code,'state')
+        if(this.$store.state.visit.loginList.code===1){
+            this.$router.push({path: '/land'})
+        }
+      }
    }
-   
     
  }
 </script>  

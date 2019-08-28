@@ -8,7 +8,10 @@
 import request from '@/utils/request'
 //注册
 export function registerArticle (params) {
-    console.log(params,'params')
    return request.post('/teacher/register',params)
-   
+};
+//登陆
+export function loginArticle (params) {
+    console.log(params,'params')
+   return request.post('/teacher/login',params)
 }
