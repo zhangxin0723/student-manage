@@ -2,17 +2,17 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-27 19:32:14
- * @LastEditTime: 2019-08-28 09:07:39
+ * @LastEditTime: 2019-08-28 10:33:57
  * @LastEditors: Please set LastEditors
  */
 // 模块所有的状态
 import { recordlists, } from '@/api'
 const state = {
   editFlag: false,
-  delFlag: false,
+  delFlag: false, 
 }
 
-// 模块内的同步改变
+// 模块内的同步改变 
 const mutations = {
   //编辑弹框
   edit_change(state:any,payload:any){
