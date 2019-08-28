@@ -1,11 +1,11 @@
 <template>
   <div class="page">
      <ul>
-        <li><input text="type" placeholder="电话"/></li>
-        <li><input text="type"  placeholder="输入密码"/></li>
+        <li><input text="type" placeholder="电话" v-model="this.username"/></li>
+        <li><input text="password"  placeholder="输入密码" v-model="this.password"/></li>
      </ul>
      <span><input type="checkbox"/>两周内自动登陆</span>
-     <button><router-link to="/land" id="den">登陆</router-link></button>
+     <button><router-link to="/land" id="den" @click="">登陆</router-link></button>
   </div>
 </template>
 <style lang="scss">
@@ -65,4 +65,17 @@
      }
    }
 </style>
+<script>
+
+ export default{
+   data(){
+     return{
+        username:this.$route.query.username,
+        password:this.$route.query.password
+     }
+   }
+   
+    
+ }
+</script>  
 

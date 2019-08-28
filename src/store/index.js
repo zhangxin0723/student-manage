@@ -7,16 +7,12 @@
  */
 import Vue from 'vue'
 import Vuex from 'vuex'
-import Vue from 'vue'
-import Vuex from 'vuex'
-import visit from './modules/visit'
-import getters from './getters'
+import visit from './modules/register'
 Vue.use(Vuex)
 const store = new Vuex.Store({
   modules: {
     visit
   },
-  getters
 })
 
 export default store

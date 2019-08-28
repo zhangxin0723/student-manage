@@ -5,3 +5,10 @@
  * @LastEditTime: 2019-08-27 11:35:36
  * @LastEditors: Please set LastEditors
  */
+import request from '@/utils/request'
+//注册
+export function registerArticle (params) {
+    console.log(params,'params')
+   return request.post('/teacher/register',params)
+   
+}

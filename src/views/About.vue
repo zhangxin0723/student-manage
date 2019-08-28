@@ -5,7 +5,7 @@
         <li><input text="type"  placeholder="输入密码" v-model="pew"/></li>
      </ul>
      <span></span>
-     <button @click="register()">注册</button>
+     <button @click="regi" onsubmit="return false;">注册</button>
   </div>
 </template>
 <style lang="scss">
@@ -67,16 +67,24 @@
    }
 </style>
 <script>
-import axios from "axios";
+import { mapState, mapMutations,mapActions} from 'vuex'
 export default {
   data() {
     return {
       refPhone: "",
-      refPwd: ""
+      refPwd: "",
+      phone:null,
+      pew:null
     };
   },
+ computed:{
+  
+ },
   methods: {
-    register() {
+    ...mapActions({
+      registes: 'visit/registerArticle'
+    }),
+    async regi() {
       this.refPhone = this.phone; //账号信息
       this.refPwd = this.pew; //密码信息
       var Phone = /^\w\w{7,11}$/; //用户名必须为8-12为字母或数字
@@ -94,17 +102,21 @@ export default {
         alert("请输入有效信息1");
         return false;
       } else {
-        var params = new URLSearchParams();
-        params.append("username", this.refPhone);
-        params.append("password", this.refPwd);
-        axios
-          .post("http://148.70.121.59:9001/emstu/teacher/register", params)
-          .then(res => {
-            console.log(res.data, "098");
-          });
-        //  console.log(this.refPhone,this.refPwd,'00')
+        let username=this.refPhone&&this.refPhone;
+        let password=this.refPwd&&this.refPwd;
+        //注册
+        await this.registes({username,password})
+        console.log(this.$store.state.visit.registerList,'registerList')
+        if(this.$store.state.visit.registerList===1){
+             this.$router.push({path: '/home/page',query:{username:this.refPhone,password:this.refPwd} })
+             
+        }else{
+          alert('已注册信息,请重新输入')
+        }
+        
       }
-    }
+    },
+    
   }
 };
 </script>
