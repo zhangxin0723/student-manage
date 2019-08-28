@@ -2,13 +2,13 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-27 14:08:02
- * @LastEditTime: 2019-08-27 14:11:12
+ * @LastEditTime: 2019-08-28 09:11:29
  * @LastEditors: Please set LastEditors
  */
 import axios from 'axios'
 // create an axios instance
 const service = axios.create({
-  baseURL: 'http://127.0.0.1:9001/emstu',
+  baseURL: 'http://148.70.121.59:9001/emstu',
   //'http://169.254.12.198:7001/',
   // withCredentials: true, // 跨域请求时发送 cookies
   timeout: 5000 // request timeout
@@ -36,7 +36,6 @@ service.interceptors.response.use(
   error => {
     return Promise.reject(error)
     // return Promise.reject(error)
-    message.error(error.message);// eslint-disable-line
   }
 )
 

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-27 15:15:12
- * @LastEditTime: 2019-08-27 19:30:52
+ * @LastEditTime: 2019-08-28 08:56:25
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -10,7 +10,7 @@
     <div class="edit">
       <h4>
         <span>编辑内容</span>
-        <span>X</span>
+        <span @click="this.edit_change">X</span>
       </h4>
       <form action>
         <label for>
@@ -31,24 +31,30 @@
         </label>
       </form>
       <h5>
-        <span>取消</span>
+        <span @click="this.edit_change">取消</span>
         <span>确定</span>
       </h5>
     </div>
   </div>
 </template>
-<script>
-export default {
+<script lang='ts'>
+import Vue from 'vue'
+import { mapMutations } from 'vuex'
+export default Vue.extend({
   props: {},
   components: {},
   data() {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+    ...mapMutations({
+      edit_change: "all/edit_change"
+    })
+  },
   created() {},
   mounted() {}
-};
+});
 </script>
 <style scoped lang="scss">
 @media screen and (min-width: 768px) {
