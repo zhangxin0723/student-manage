@@ -37,7 +37,7 @@
           </li>
           <li>查看和编辑所有的成绩</li>
         </ul>
-       <AchiEvement/>
+       <AchiEvement :bool="this.bool"/>
      </div>
   </div>
 </template>
@@ -60,7 +60,9 @@ export default {
   methods: {
     data() {
       return {
-        bool: false
+          bool: false,
+          conpye:'',
+          list:[]
       };
     },
     drawBar() {
@@ -166,7 +168,12 @@ export default {
     },
     add(type) {
       this.bool = !this.bool;
-      console.log(type, "90");
+      this.conpye=type
+      console.log(this.conpye,'123')
+      // this.list.push(this.bool, this.conpye)S
+    //  this.$emit('bool',this.bool,this.conpye)
+      // console.log(this.bool,this.conpye, "90");
+     
     }
   }
 };
