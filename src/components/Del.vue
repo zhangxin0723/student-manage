@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-27 15:09:53
- * @LastEditTime: 2019-08-27 16:35:30
+ * @LastEditTime: 2019-08-28 08:59:35
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -10,24 +10,31 @@
     <div class="del">
       <h4>确定要删除吗？</h4>
       <p>
-        <span>取消</span>
+        <span @click="this.del_change">取消</span>
         <span>确定</span>
       </p>
     </div>
   </div>
 </template>
 <script>
-export default {
+import Vue from 'vue'
+import { mapMutations } from 'vuex'
+
+export default ({
   props: {},
   components: {},
   data() {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+    ...mapMutations({
+      del_change: 'all/del_change'
+    })
+  },
   created() {},
   mounted() {}
-};
+});
 </script>
 <style scoped lang="scss">
 @media screen and (min-width: 768px) {
@@ -94,7 +101,7 @@ export default {
     }
   }
 }
-@media screen and (max-width: 414px) {
+@media screen and (max-width:767px) {
   html{
     font-size: 50px;
   }

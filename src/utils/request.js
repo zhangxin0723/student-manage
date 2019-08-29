@@ -1,4 +1,11 @@
 
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-27 14:08:02
+ * @LastEditTime: 2019-08-28 09:11:29
+ * @LastEditors: Please set LastEditors
+ */
 import axios from 'axios'
 import store from '@/store'
 import { getToken } from '@/utils/auth'

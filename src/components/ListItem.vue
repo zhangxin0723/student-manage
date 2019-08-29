@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-26 21:06:13
- * @LastEditTime: 2019-08-27 16:26:17
+ * @LastEditTime: 2019-08-28 09:08:18
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -15,17 +15,19 @@
       <li>对方过后就给范德萨的风格和接口规范的撒上辅导过后就会看见割发代首撒的风格和减肥的撒的风格和</li>
       <li>是</li>
       <li>
-        <span>编辑</span>
-        <span>删除</span>
+        <span @click="this.edit_change">编辑</span>
+        <span @click="this.del_change">删除</span>
       </li>
     </ul>
   </div>
 </template>
-<script>
-import Del from "@/components/Del";
-import Edit from "@/components/Edit";
+<script lang='ts'>
+import Vue from "vue";
+import Del from "@/components/Del.vue";
+import Edit from "@/components/Edit.vue";
+import { mapMutations, mapActions } from "vuex";
 
-export default {
+export default Vue.extend({
   props: {},
   components: {
     Del
@@ -34,10 +36,20 @@ export default {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+    ...mapMutations({
+      edit_change: "all/edit_change",
+      del_change: 'all/del_change'
+    }),
+    ...mapActions({
+      recordlists: 'all/recordlists'
+    })
+  },
   created() {},
-  mounted() {}
-};
+  mounted() {
+    this.recordlists()
+  }
+});
 </script>
 <style scoped lang="scss">
 @media screen and (min-width: 768px) {
@@ -63,7 +75,7 @@ export default {
     }
   }
 }
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 767px) {
   html {
     font-size: 50px;
   }
@@ -84,7 +96,7 @@ export default {
       align-items: center;
       &:nth-child(5) {
         overflow: hidden;
-        text-overflow:ellipsis;
+        text-overflow: ellipsis;
         white-space: nowrap;
       }
     }

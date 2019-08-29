@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-26 10:51:14
- * @LastEditTime: 2019-08-27 16:46:09
+ * @LastEditTime: 2019-08-28 09:05:37
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -47,12 +47,14 @@
       </template>
   </div>
 </template>
-<script>
-import Head from '@/components/Head'
-import ListItem from '@/components/ListItem'
-import Del from '@/components/Del'
-import Edit from '@/components/Edit'
-export default {
+<script lang='ts'>
+import Vue from 'vue'
+import Head from '@/components/Head.vue'
+import ListItem from '@/components/ListItem.vue'
+import Del from '@/components/Del.vue'
+import Edit from '@/components/Edit.vue'
+import { mapState, mapMutations} from 'vuex'
+export default Vue.extend ({
   props:{
 
   },
@@ -64,23 +66,25 @@ export default {
   },
   data(){
     return {
-      editFlag: true,
-      delFlag: false,
+      
     }
   },
   computed:{
-
+    ...mapState({
+      editFlag: (state:any) => state.all.editFlag,
+      delFlag: (state:any) => state.all.delFlag,
+    })
   },
   methods:{
-
+    
   },
   created(){
 
   },
   mounted(){
-
+    
   }
-}
+})
 </script>
 <style scoped lang="scss">
 @media screen and (min-width: 768px) {                                                                             o
@@ -159,7 +163,7 @@ export default {
     }
   }
 }
-@media screen and (max-width: 414px) {
+@media screen and (max-width:767px) {
   html {
     font-size: 50px;
   }

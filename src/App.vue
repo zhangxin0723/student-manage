@@ -6,14 +6,8 @@
  * @LastEditors: Please set LastEditors
  -->
 <template>
-  <div id="app">
-    <div id="nav">
-       <router-view/>
-       <!-- <All></All> -->
-       
-      <!-- <router-link to="/">Home</router-link> | 
-       <router-link to="/about">About</router-link>-->
-    </div>  
+  <div id='app'>
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -27,9 +21,9 @@ export default {
   },
   data(){
     return {
+
     }
-  }
-,
+  },
   computed:{
 
   },
@@ -63,4 +57,3 @@ export default {
     }
   }
 }
-</style>

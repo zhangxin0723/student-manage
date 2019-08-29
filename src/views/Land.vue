@@ -37,7 +37,7 @@
           </li>
           <li>查看和编辑所有的成绩</li>
         </ul>
-       <AchiEvement :bool="this.bool"/>
+       <AchiEvement :bool="bool"/>
      </div>
   </div>
 </template>
