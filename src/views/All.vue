@@ -87,7 +87,7 @@ export default Vue.extend ({
 })
 </script>
 <style scoped lang="scss">
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {                                                                             o
   html {
     font-size: 100px;
   }

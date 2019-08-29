@@ -1,24 +1,24 @@
 <template>
   <div class="page">
      <ul>
-        <li><input text="type" placeholder="电话"/></li>
-        <li><input text="type"  placeholder="输入密码"/></li>
+        <li><input text="type" placeholder="电话" v-model="this.username"/></li>
+        <li><input text="password"  placeholder="输入密码" v-model="this.password"/></li>
      </ul>
      <span><input type="checkbox"/>两周内自动登陆</span>
-     <button><router-link to="/land" id="den">登陆</router-link></button>
+     <button @click="land()">登陆</button>
+     <!-- <button><router-link to="/land" id="den" @click="land(this.username,this.password)">登陆</router-link></button> -->
   </div>
 </template>
 <style lang="scss">
    .page{
      display:flex;
      flex-direction:column;
-     margin-top: 14px;
      ul{
        display:flex;
        flex-direction:column;
        margin-top: -12px;
         li{
-          width:90%;
+          width:100%;
           height:50px;
           display:flex;
           justify-content: center;
@@ -32,32 +32,33 @@
             color:#b1b2b4;
             font-size:12px;
             padding-left:15px;
-            height:33px;
+            height:40px;
             border-radius: 3px;
           }
         }
         li:first-of-type{
-          margin-bottom: 30px;
+          margin-bottom: -10px;
         }
      }
      span{
        text-align: left;
        display:block;
        font-size:12px;
-       margin:24px 0 10px 0;
        display:flex;
+       margin-top:-7px;
        justify-content: flex-start;
        align-items: center;
-       margin-bottom: 15px;
+       margin-bottom: 18px;
        input{
          margin-right:4px;
        }
      }
      button{
-       width: 90%;
-       height: 90px;
+       width: 100%;
+       height: 35px;
        border:0;
        background: 0;
+       color:#fff;
        #den{
          color:#fff;
        }
@@ -66,4 +67,28 @@
      }
    }
 </style>
+<script>
+import { mapState, mapMutations,mapActions} from 'vuex'
+ export default{
+   data(){
+     return{
+        username:this.$route.query.username,
+        password:this.$route.query.password
+     }
+   },
+   methods:{
+      ...mapActions({
+          login: 'visit/loginArticle'
+        }),
+     async land(){
+        await this.login({username:this.username,password:this.password})
+        console.log(this.$store.state.visit.loginList.code,'state')
+        if(this.$store.state.visit.loginList.code===1){
+            this.$router.push({path: '/land'})
+        }
+      }
+   }
+    
+ }
+</script>  
 

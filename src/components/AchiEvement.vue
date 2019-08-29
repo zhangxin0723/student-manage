@@ -1,5 +1,5 @@
 <template>
-  <div id="add" class="display">
+  <div id="add" class="display" ref="add">
         <span>新添加成绩---××同学</span>
         <ul id="day">
             <li>
@@ -29,9 +29,10 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'HelloWorld',
-  props: {
-    msg: String,
-  },
+  props: ['boole','copu'],
+  created(){
+     console.log(this.boole,'thisacth')
+  }
 });
 </script>
 

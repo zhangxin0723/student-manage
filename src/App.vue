@@ -2,17 +2,13 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-26 09:56:38
- * @LastEditTime: 2019-08-27 19:25:26
+ * @LastEditTime: 2019-08-26 11:00:51
  * @LastEditors: Please set LastEditors
  -->
 <template>
-  <div id="app">
-       <router-view/>
-       <!-- <All></All> -->
-       
-      <!-- <router-link to="/">Home</router-link> | 
-       <router-link to="/about">About</router-link>-->
-    </div>  
+  <div id='app'>
+    <router-view></router-view>
+  </div>
 </template>
 <script>
 import All from '@/views/All'
@@ -25,9 +21,9 @@ export default {
   },
   data(){
     return {
+
     }
-  }
-,
+  },
   computed:{
 
   },
@@ -43,5 +39,21 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-
-</style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+#nav {
+  a {
+    color: #b1b2b4;
+    padding-bottom:10px;
+    font-size:13px;
+    &.router-link-exact-active {
+      color: #344ab6;
+      border-bottom:2px solid #344ab6;
+    }
+  }
+}
