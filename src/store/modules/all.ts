@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-27 19:32:14
- * @LastEditTime: 2019-08-28 10:33:57
+ * @LastEditTime: 2019-08-28 10:35:37
  * @LastEditors: Please set LastEditors
  */
 // 模块所有的状态
@@ -29,7 +29,7 @@ const actions = {
   async recordlists({commit}:any,payload:any){
     let res= await recordlists()
     console.log(res)
-  }
+  } 
 }
 
 export default {

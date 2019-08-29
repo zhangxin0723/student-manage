@@ -2,13 +2,13 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-27 14:08:02
- * @LastEditTime: 2019-08-28 09:11:29
+ * @LastEditTime: 2019-08-28 17:28:40
  * @LastEditors: Please set LastEditors
  */
 import axios from 'axios'
 // create an axios instance
 const service = axios.create({
-  baseURL: 'http://148.70.121.59:9001/emstu',
+  baseURL: '',
   //'http://169.254.12.198:7001/',
   // withCredentials: true, // 跨域请求时发送 cookies
   timeout: 5000 // request timeout
